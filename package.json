@@ -9,7 +9,7 @@
     "html"
   ],
   "repository": {
-    "url": ""
+    "url": "https://github.com/taras42/karma-jasmine-html-reporter"
   },
   "author": "",
   "dependencies": {
