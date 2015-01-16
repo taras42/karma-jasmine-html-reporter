@@ -1,6 +1,7 @@
 # karma-jasmine-html-reporter
 
 > Reporter that dynamically shows tests results at debug.html page.
+> Jasmine 1.3 is not supported.
 
 ## Installation
 
