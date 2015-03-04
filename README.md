@@ -3,6 +3,12 @@
 > Reporter that dynamically shows tests results at debug.html page.
 > Jasmine 1.3 is not supported.
 
+![alt tag](https://raw.github.com/taras42/karma-jasmine-html-reporter/master/screenshots/reporter_1.png)
+
+You can also run describe block, or single test.
+
+![alt tag](https://raw.github.com/taras42/karma-jasmine-html-reporter/master/screenshots/reporter_2.png)
+
 ## Installation
 
 The easiest way is to keep `karma-jasmine-html-reporter` as a devDependency in your `package.json`.
