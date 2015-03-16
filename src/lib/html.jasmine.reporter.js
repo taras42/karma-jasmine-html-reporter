@@ -226,12 +226,24 @@ jasmineRequire.HtmlReporter = function(j$) {
                     failureNode.appendChild(failures[i]);
                 }
             }
+
+            scrollToSpec(document.querySelector(".summary li.passed"));
         };
 
         return this;
 
         function find(selector) {
             return getContainer().querySelector(selector);
+        }
+
+        function scrollToSpec(specEl){
+            var scroll;
+            
+            scroll = specEl && specEl.offsetTop > 0 ? 
+                specEl.offsetTop > window.innerHeight ? 
+                    specEl.offsetTop : 0 : 0;
+
+            document.body.scrollTop = scroll;
         }
 
         function createDom(type, attrs, childrenVarArgs) {
