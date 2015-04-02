@@ -246,17 +246,20 @@ jasmineRequire.HtmlReporter = function(j$) {
 
         function scrollToSpec(specEl){
             var scroll = 0,
-                windowInnerHeight = window.innerHeight,
-                suiteId = specEl.getAttribute("spec-suite-id");
+                windowInnerHeight = window.innerHeight;
 
-            var parent = getParentById(specEl, "suite-" + suiteId);
+            if(specEl){
+                var suiteId = specEl.getAttribute("spec-suite-id"),
+                    parent = getParentById(specEl, "suite-" + suiteId);
+                    
 
-            if(parent && (parent.offsetTop > 0)){
-                var parentHeight = parent.offsetHeight;
+                if(parent && (parent.offsetTop > 0)){
+                    var parentHeight = parent.offsetHeight;
 
-                scroll = (parent.offsetTop + parentHeight) > windowInnerHeight ? 
-                    parent.offsetTop - windowInnerHeight/2 : 0; 
-            }
+                    scroll = (parent.offsetTop + parentHeight) > windowInnerHeight ? 
+                        parent.offsetTop - windowInnerHeight/2 : 0; 
+                }
+            }    
             
             document.body.scrollTop = scroll;
         }
