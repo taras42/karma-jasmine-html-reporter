@@ -266,10 +266,16 @@ jasmineRequire.HtmlReporter = function(j$) {
                 parent = el;
 
             while(!found){
-                if(parent.parentNode.id === id){
+                if(parent && parent.parentNode){
+                    if(parent.parentNode.id === id){
+                        found = true;
+                    } 
+                    
+                    parent = parent.parentNode;    
+                }else{
                     found = true;
-                } 
-                parent = parent.parentNode;
+                    parent = null;    
+                }
             }
 
             return parent;
