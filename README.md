@@ -32,7 +32,7 @@ npm install karma-jasmine-html-reporter --save-dev
 module.exports = function(config) {
   config.set({
 
-    reporters: ['html']
+    reporters: ['kjhtml']
 
   });
 };
@@ -40,5 +40,5 @@ module.exports = function(config) {
 
 You can pass list of reporters as a CLI argument too:
 ```bash
-karma start --reporters html
+karma start --reporters kjhtml
 ```

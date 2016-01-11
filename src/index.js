@@ -14,5 +14,5 @@ var initReporter = function(files,  baseReporterDecorator) {
 initReporter.$inject = ['config.files',  'baseReporterDecorator'];
 
 module.exports = {
-  'reporter:html': ['type', initReporter]
+  'reporter:kjhtml': ['type', initReporter]
 };
