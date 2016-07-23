@@ -1,6 +1,6 @@
 {
   "name": "karma-jasmine-html-reporter",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A Karma plugin. Dynamically displays tests results at debug.html page",
   "main": "./src/index.js",
   "keywords": [
@@ -12,6 +12,16 @@
     "url": "https://github.com/taras42/karma-jasmine-html-reporter"
   },
   "author": "",
+  "contributors": [
+  	{
+      "name": "Yudha Setiawan",
+      "url": "https://github.com/yudhasetiawan"
+   	},
+   	{
+      "name": "Brian Thompson",
+      "url": "https://github.com/dachibro"
+   	}
+   ],
   "dependencies": {
   	"karma-jasmine": "^1.0.2"
   },
