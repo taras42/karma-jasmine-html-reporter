@@ -1,4 +1,4 @@
-var JASMINE_CORE_PATTERN = /(\/karma-jasmine\/)/i;
+var JASMINE_CORE_PATTERN = /([\\/]karma-jasmine[\\/])/i;
 var createPattern = function(path) {
   return {pattern: path, included: true, served: true, watched: false};
 };
