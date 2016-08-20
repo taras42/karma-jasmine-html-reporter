@@ -1,6 +1,6 @@
 {
   "name": "karma-jasmine-html-reporter",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A Karma plugin. Dynamically displays tests results at debug.html page",
   "main": "./src/index.js",
   "keywords": [
@@ -20,7 +20,11 @@
    	{
       "name": "Brian Thompson",
       "url": "https://github.com/dachibro"
-   	}
+   	},
+    {
+      "name": "protazy",
+      "url": "https://github.com/protazy"
+    }
    ],
   "dependencies": {
   	"karma-jasmine": "^1.0.2"
