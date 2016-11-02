@@ -17,6 +17,8 @@ var initReporter = function(files,  baseReporterDecorator) {
   files.splice(++jasmineCoreIndex, 0, createPattern(__dirname + '/css/jasmine.css'));
   files.splice(++jasmineCoreIndex, 0, createPattern(__dirname + '/lib/html.jasmine.reporter.js'));
   files.splice(++jasmineCoreIndex, 0, createPattern(__dirname + '/lib/adapter.js'));
+  files.splice(++jasmineCoreIndex, 0, createPattern(__dirname + '/lib/custom-jasmine-reporter.js'));
+  files.splice(++jasmineCoreIndex, 0, createPattern(__dirname + '/lib/browser-helpers.js'));
 };
 
 initReporter.$inject = ['config.files',  'baseReporterDecorator'];
