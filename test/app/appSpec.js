@@ -1,7 +1,7 @@
 describe("App Spec.", function() {
 
     afterEach(function() {
-        KJHTML_APP.reset();
+        KJHTML_APP.removeClass("myCustomClass");
     });
 
     it("should register class", function() {
@@ -17,5 +17,5 @@ describe("App Spec.", function() {
             KJHTML_APP.getClass("myCustomClass");
         }).toThrow(new Error("There is no class with name myCustomClass"));
     });
-
+    
 });

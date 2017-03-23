@@ -28,6 +28,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "jasmine-sinon": "^0.4.0",
     "karma": ">=1.0",
     "karma-chrome-launcher": "^2.0.0",
     "karma-jasmine": "^1.0.2",

@@ -22,10 +22,18 @@ var KJHTML_APP = (function(options) {
             }
         },
 
-        start: function() {},
+        start: function() {
+            var DomUtil = this.getClass("DomUtil"),
+                domUtil = new DomUtil();
 
-        reset: function() {
-            this.classes = {};
+            var Reporter = this.getClass("Reporter"),
+                reporter = new Reporter({
+                    domUtil: domUtil
+                });
+        },
+
+        removeClass: function(className) {
+            delete this.classes[className];
         }
     }
 
@@ -33,6 +41,4 @@ var KJHTML_APP = (function(options) {
 
     return new App;
 
-})({
-
-});
+})({});

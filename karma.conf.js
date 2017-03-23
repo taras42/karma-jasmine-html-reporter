@@ -16,6 +16,9 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'src/app/**/*.js',
+
+      'node_modules/jasmine-sinon/lib/jasmine-sinon.js',
+
       'test/**/*Spec.js'
     ],
 
