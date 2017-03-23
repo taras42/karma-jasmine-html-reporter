@@ -24,23 +24,25 @@
         },
 
         suiteStarted: function(result) {
-
+            this.treeSpecReporter.startSuite(result);
         },
 
         specStarted: function(result) {
-
+            this.treeSpecReporter.startSpec(result);
+            this.dotsSpectReporter.startSpec(result);
         },
 
         specDone: function(result) {
-
+            this.treeSpecReporter.stopSpec(result);
+            this.dotsSpectReporter.stopSpec(result);
         },
 
         suiteDone: function(result) {
-
+            this.treeSpecReporter.stopSuite(result);
         },
 
         jasmineDone: function() {
-
+            this.treeSpecReporter.render();
         },
 
         getJasmineHTMLReporter: function() {
