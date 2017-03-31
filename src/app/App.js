@@ -7,33 +7,32 @@ var KJHTML_APP = (function(options) {
     App.prototype = {
 
         initialize: function(options) {
-            this.classes = {};
+            this.context = {};
         },
 
-        registerClass: function(className, classFunction) {
-            this.classes[className] = classFunction;
+        register: function(name, obj) {
+            this.context[name] = obj;
         },
 
-        getClass: function(className) {
-            if (this.classes[className]) {
-                return this.classes[className];
+        get: function(name) {
+            if (this.context[name]) {
+                return this.context[name];
             } else {
-                throw new Error("There is no class with name " + className);
+                throw new Error("There is no module with name " + name);
             }
         },
 
         start: function() {
-            var DomUtil = this.getClass("DomUtil"),
-                domUtil = new DomUtil();
+            var domUtil = this.get("domUtil");
 
-            var Reporter = this.getClass("Reporter"),
+            var Reporter = this.get("Reporter"),
                 reporter = new Reporter({
                     domUtil: domUtil
                 });
         },
 
-        removeClass: function(className) {
-            delete this.classes[className];
+        unregister: function(name) {
+            delete this.context[name];
         }
     }
 

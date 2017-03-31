@@ -41,7 +41,7 @@ describe("Reporter Spec.", function() {
     });
 
     function getReporter() {
-        var Reporter = KJHTML_APP.getClass("Reporter");
+        var Reporter = KJHTML_APP.get("Reporter");
 
         return new Reporter({
             container: container,

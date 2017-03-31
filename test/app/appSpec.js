@@ -1,21 +1,21 @@
 describe("App Spec.", function() {
 
     afterEach(function() {
-        KJHTML_APP.removeClass("myCustomClass");
+        KJHTML_APP.unregister("myCustomModule");
     });
 
-    it("should register class", function() {
-        var customClass = function() {};
+    it("should register module", function() {
+        var customModule = function() {};
 
-        KJHTML_APP.registerClass("myCustomClass", customClass);
+        KJHTML_APP.register("myCustomModule", customModule);
 
-        expect(KJHTML_APP.getClass("myCustomClass")).toEqual(customClass);
+        expect(KJHTML_APP.get("myCustomModule")).toEqual(customModule);
     });
 
-    it("should throw error if no class with specified name was found", function() {
+    it("should throw error if no module with specified name was found", function() {
         expect(function() {
-            KJHTML_APP.getClass("myCustomClass");
-        }).toThrow(new Error("There is no class with name myCustomClass"));
+            KJHTML_APP.get("myCustomModule");
+        }).toThrow(new Error("There is no module with name myCustomModule"));
     });
-    
+
 });

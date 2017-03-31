@@ -73,5 +73,5 @@
 
     Reporter.prototype.constructor = Reporter;
 
-    KJHTML_APP.registerClass("Reporter", Reporter);
+    KJHTML_APP.register("Reporter", Reporter);
 })(KJHTML_APP);

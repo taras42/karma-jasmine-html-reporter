@@ -1,8 +1,10 @@
 (function(KJHTML_APP) {
 
-    var DomUtil = function() {};
+    var domUtil = {
 
-    DomUtil.prototype = {
+        addClass: function(el, className) {
+            el.className += " " + className;
+        },
 
         createTextNode: function() {
             return document.createTextNode.apply(document, arguments);
@@ -43,7 +45,5 @@
         }
     };
 
-    DomUtil.prototype.constructor = DomUtil;
-
-    KJHTML_APP.registerClass("DomUtil", DomUtil);
+    KJHTML_APP.register("domUtil", domUtil);
 })(KJHTML_APP);
