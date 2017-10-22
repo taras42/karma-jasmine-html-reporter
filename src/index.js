@@ -8,6 +8,8 @@ var initReporter = function(files,  baseReporterDecorator) {
 
   baseReporterDecorator(this);
 
+  this.specFailure = () => '';
+
   files.forEach(function(file, index) {
     if (JASMINE_CORE_PATTERN.test(file.pattern)) {
       jasmineCoreIndex = index;
