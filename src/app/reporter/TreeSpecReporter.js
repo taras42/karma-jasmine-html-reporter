@@ -61,7 +61,7 @@
             specStatusClass = this._getSpecClassBySpecStatus(specStatus);
 
             if (this.specUtil.isSpecFailed(specStatus)) {
-                specElChildren = this._getFailedSpecEl(spec, specNameEl);
+                specElChildren = this._getFailedSpecExpectationsEl(spec);
             } else {
                 specElChildren = [specNameEl];
             }
@@ -99,7 +99,7 @@
         _createElements: function() {
             this.suiteContainer = this.domUtil.createDom({
                 el: "div",
-                attributes: {className: "kjhtml-tree-spec-reporter-suite-container"},
+                attributes: {className: "kjhtml-tree-spec-reporter-suite-container"}
             });
 
             this.el = this.domUtil.createDom({
@@ -109,24 +109,18 @@
         },
 
         _getSpecClassBySpecStatus: function(specStatus) {
-            var specStatusClass;
+            var specStatusClass = "kjhtml-tree-spec-reporter-spec";
 
-            if (this.specUtil.isSpecPassed(specStatus)) {
-                specStatusClass = "kjhtml-tree-spec-reporter-spec-passed";
-            } else if (this.specUtil.isSpecDisabled(specStatus)) {
-                specStatusClass = "kjhtml-tree-spec-reporter-spec-disabled";
-            } else if (this.specUtil.isSpecPending(specStatus)) {
-                specStatusClass = "kjhtml-tree-spec-reporter-spec-pending";
-            } else if (this.specUtil.isSpecHasNoExpectations(spec)) {
-                specStatusClass = "kjhtml-tree-spec-reporter-spec-has-no-expectations";
-            } else if (this.specUtil.isSpecFailed(specStatus)) {
-                specStatusClass = "kjhtml-tree-spec-reporter-spec-failed";
+            if (this.specUtil.isSpecHasNoExpectations(specStatus)) {
+                specStatusClass = specStatusClass + " has-no-expectations";
+            } else {
+                specStatusClass = specStatusClass + " " + specStatus;
             }
 
             return specStatusClass;
         },
 
-        _getFailedSpecEl: function(spec, specNameEl) {
+        _getFailedSpecExpectationsEl: function(spec) {
             var self = this;
 
             var failedSpecDetailsElChildren = spec.failedExpectations.reduce(function(memo, expectation) {
@@ -136,7 +130,7 @@
                     children: [expectation.message]
                 });
 
-                var expectationStackEl =  self.domUtil.createDom({
+                var expectationStackEl = self.domUtil.createDom({
                     el: "div",
                     attributes: {className: "kjhtml-tree-spec-reporter-spec-failed-expectation-stack"},
                     children: [expectation.stack]
@@ -157,7 +151,7 @@
                 children: failedSpecDetailsElChildren
             });
 
-            return failedSpecExpectationsEl;
+            return [failedSpecExpectationsEl];
         }
     }
 

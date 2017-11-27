@@ -35,7 +35,7 @@
             var status = spec.status;
 
             if (this.specUtil.isSpecHasNoExpectations(spec)) {
-                this.domUtil.addClass(this.currentSpec, 'kjhtml-has-no-expectations');
+                this.domUtil.addClass(this.currentSpec, 'has-no-expectations');
             } else {
                 this.domUtil.addClass(this.currentSpec, status);
             }

@@ -99,14 +99,14 @@ describe("DotsSpectReporter Spec.", function() {
             dotsSpectReporter = getDotsSpecReporter();
         });
 
-        it("adding kjhtml-has-no-expectations class to spec", function() {
+        it("adding has-no-expectations class to spec", function() {
             specUtil.isSpecHasNoExpectations.returns(true);
 
             dotsSpectReporter.startSpec(spec);
             dotsSpectReporter.stopSpec(spec);
 
             expect(domUtil.addClass)
-                .toHaveBeenCalledWith("domTree", "kjhtml-has-no-expectations");
+                .toHaveBeenCalledWith("domTree", "has-no-expectations");
 
             expect(specUtil.isSpecHasNoExpectations).toHaveBeenCalledWith(spec);
             expect(dotsContainerStub.appendChild).toHaveBeenCalledWith("domTree");
