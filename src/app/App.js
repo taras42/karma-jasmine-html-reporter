@@ -23,11 +23,19 @@ var KJHTML_APP = (function(options) {
         },
 
         start: function() {
-            var domUtil = this.get("domUtil");
+            var domUtil = this.get("domUtil"),
+                specUtil = this.get("specUtil");
+
+            var DotsSpecReporter = this.get("DotsSpecReporter"),
+                dotsSpecReporter = new DotsSpecReporter({
+                    domUtil: domUtil,
+                    specUtil: specUtil
+                })
 
             var Reporter = this.get("Reporter"),
                 reporter = new Reporter({
-                    domUtil: domUtil
+                    domUtil: domUtil,
+                    dotsSpecReporter: dotsSpecReporter
                 });
         },
 
