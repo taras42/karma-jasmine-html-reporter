@@ -4,6 +4,14 @@
 
     var specUtil = {
 
+        getSuiteId: function() {
+            return "suite" + Date.now();
+        },
+
+        getSpecId: function() {
+            return "spec" + Date.now();
+        },
+
         isSpecPassed: function(spec) {
             return spec.status === statusEnum.PASSED;
         },

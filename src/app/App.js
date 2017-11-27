@@ -26,16 +26,23 @@ var KJHTML_APP = (function(options) {
             var domUtil = this.get("domUtil"),
                 specUtil = this.get("specUtil");
 
+            var TreeSpecReporter = this.get("TreeSpecReporter"),
+                treeSpecReporter = new TreeSpecReporter({
+                    domUtil: domUtil,
+                    specUtil: specUtil
+                });
+
             var DotsSpecReporter = this.get("DotsSpecReporter"),
                 dotsSpecReporter = new DotsSpecReporter({
                     domUtil: domUtil,
                     specUtil: specUtil
-                })
+                });
 
             var Reporter = this.get("Reporter"),
                 reporter = new Reporter({
                     domUtil: domUtil,
-                    dotsSpecReporter: dotsSpecReporter
+                    dotsSpecReporter: dotsSpecReporter,
+                    treeSpecReporter: treeSpecReporter
                 });
         },
 
