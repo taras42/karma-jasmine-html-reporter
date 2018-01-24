@@ -96,7 +96,12 @@ jasmineRequire.HtmlReporter = function(j$) {
 
         var failures = [];
         this.specDone = function(result) {
-            if (result.status != "disabled") {
+            var excluded = (
+                result.status === "pending"
+                && result.pendingReason
+                && /xit/.test(result.pendingReason)
+            );
+            if (!excluded && result.status != "disabled") {
                 specsExecuted++;
             }
 
@@ -126,10 +131,6 @@ jasmineRequire.HtmlReporter = function(j$) {
                 }
 
                 failures.push(failure);
-            }
-
-            if (result.status == "pending") {
-                pendingSpecCount++;
             }
         };
 
@@ -162,7 +163,9 @@ jasmineRequire.HtmlReporter = function(j$) {
                 );
             }
             var statusBarMessage = "" + pluralize("spec", specsExecuted) + ", " + pluralize("failure", failureCount);
-            if (pendingSpecCount) { statusBarMessage += ", " + pluralize("pending spec", pendingSpecCount); }
+
+            var excludedSpecCount = (totalSpecsDefined - specsExecuted);
+            if (excludedSpecCount) { statusBarMessage += ", " + pluralize("excluded spec", excludedSpecCount); }
 
             var statusBarClassName = "bar " + ((failureCount > 0) ? "failed" : "passed");
             alert.appendChild(createDom("span", {className: statusBarClassName}, statusBarMessage));
