@@ -1,6 +1,6 @@
 {
   "name": "karma-jasmine-html-reporter",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A Karma plugin. Dynamically displays tests results at debug.html page",
   "main": "./src/index.js",
   "keywords": [
@@ -24,13 +24,18 @@
     {
       "name": "protazy",
       "url": "https://github.com/protazy"
+    },
+    {
+      "name": "David Federman",
+      "url": "https://github.com/dfederm"
     }
    ],
   "dependencies": {
   	"karma-jasmine": "^1.0.2"
   },
   "peerDependencies": {
-    "karma": ">=0.9"
+    "karma": ">=0.9",
+    "jasmine": "^3.0.0"
   },
   "license": "MIT",
   "devDependencies": {},
