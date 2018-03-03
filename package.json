@@ -1,6 +1,6 @@
 {
   "name": "karma-jasmine-html-reporter",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "A Karma plugin. Dynamically displays tests results at debug.html page",
   "main": "./src/index.js",
   "keywords": [
@@ -13,14 +13,14 @@
   },
   "author": "",
   "contributors": [
-  	{
+    {
       "name": "Yudha Setiawan",
       "url": "https://github.com/yudhasetiawan"
-   	},
-   	{
+    },
+    {
       "name": "Brian Thompson",
       "url": "https://github.com/dachibro"
-   	},
+    },
     {
       "name": "protazy",
       "url": "https://github.com/protazy"
@@ -29,9 +29,9 @@
       "name": "David Federman",
       "url": "https://github.com/dfederm"
     }
-   ],
+  ],
   "dependencies": {
-  	"karma-jasmine": "^1.0.2"
+    "karma-jasmine": "^1.0.2"
   },
   "peerDependencies": {
     "karma": ">=0.9",
