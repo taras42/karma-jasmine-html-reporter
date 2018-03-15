@@ -43,3 +43,11 @@ You can pass a list of reporters as a CLI argument too:
 ```bash
 karma start --reporters kjhtml
 ```
+
+## Develop
+
+There's not much to this package.
+
+`adapter.js` and `html.jasmine.reporter.js` are copied with small adjustments from `jasmine/lib/jasmine-core/boot.js` and `jasmine/lib/jasmine-core/jasmine-html.js` respectively.
+
+Just pull over changes from Jasmine as needed.
