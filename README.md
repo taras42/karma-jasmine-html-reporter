@@ -1,3 +1,6 @@
+# NO LONGER MAINTAINED
+See https://github.com/dfederm/karma-jasmine-html-reporter
+
 # karma-jasmine-html-reporter
 
 > Reporter that dynamically shows tests results at debug.html page.
